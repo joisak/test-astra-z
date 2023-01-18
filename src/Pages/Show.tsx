@@ -1,12 +1,10 @@
 import { Box, CircularProgress, Link, Typography } from '@mui/material';
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { ITVShow } from '../types';
-
 import ShowDetails from '../Components/ShowDetails';
 import { useLocalStorageShowDetails } from '../useLocalStorageShowDetails';
-
+import axios from 'axios';
 const Show = () => {
 	const location = useLocation();
 	const urlId: string | undefined = location.pathname.length
