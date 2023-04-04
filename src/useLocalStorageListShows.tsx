@@ -21,7 +21,7 @@ export function useLocalStorageListShows(): [
 			'searchForSeriesSearchValue'
 		);
 		if (localStorageSearchResults) {
-			const latestSearchArray = JSON.parse(localStorageSearchResults || '');
+			const latestSearchArray = JSON.parse(localStorageSearchResults);
 			const searchValue = localStoragesearchSeriesValue || '';
 			setLatestSearchValue(searchValue);
 
@@ -31,7 +31,7 @@ export function useLocalStorageListShows(): [
 		}
 
 		if (localStorageFavoritesSeries) {
-			const favorites = JSON.parse(localStorageFavoritesSeries || '');
+			const favorites = JSON.parse(localStorageFavoritesSeries);
 			setFavorites(favorites);
 		}
 	}, []);

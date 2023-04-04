@@ -1,0 +1,12 @@
+.root {
+    animation: fadeIn 0.2s cubic-bezier(0.49, 0.98, 0.53, 1.37)
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

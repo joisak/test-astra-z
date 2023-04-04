@@ -5,7 +5,7 @@ import ListFavorites from './ListFavorites';
 
 interface props {
 	open: boolean;
-	handleClose: any;
+	handleClose: () => void;
 	favorites: ITVShow[];
 }
 

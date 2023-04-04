@@ -1,6 +1,5 @@
 import {
 	Avatar,
-	Link,
 	List,
 	ListItem,
 	ListItemAvatar,
@@ -9,6 +8,7 @@ import {
 import React from 'react';
 import { ITVShow } from '../types';
 import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual';
+import { Link } from 'react-router-dom';
 
 interface props {
 	favorites: ITVShow[];
@@ -21,9 +21,9 @@ const ListFavorites = ({ favorites }: props) => {
 				{favorites?.map((favorite: ITVShow) => {
 					return (
 						<Link
-							href={'/show/' + favorite.id}
+							state={favorite}
+							to={'/show/' + favorite.id}
 							key={favorite.id}
-							underline="none"
 						>
 							<ListItem
 								sx={{

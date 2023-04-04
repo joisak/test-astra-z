@@ -1,14 +1,9 @@
-import {
-	ListItem,
-	ListItemAvatar,
-	Avatar,
-	ListItemText,
-	Link,
-} from '@mui/material';
+import { ListItem, ListItemAvatar, Avatar, ListItemText } from '@mui/material';
 import React from 'react';
 
 import { ITVShow } from '../types';
 import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual';
+import { Link } from 'react-router-dom';
 
 interface props {
 	data: ITVShow;
@@ -16,7 +11,7 @@ interface props {
 
 const TvShowListItem = ({ data }: props) => {
 	return (
-		<Link href={'/show/' + data.id} key={data.id} underline="none">
+		<Link state={data} to={'/show/' + data.id} key={data.id}>
 			<ListItem
 				sx={{
 					width: '100%',

@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import List from '@mui/material/List';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IDataResponse } from '../types';
 import FavoiritesModal from '../Components/FavoriteModal';
 import TvShowListItem from '../Components/TvShowListItem';
@@ -42,6 +42,7 @@ const ListShows = () => {
 				);
 			})
 			.catch((error: Error) => {
+				console.log('Error: ', error);
 				setError(true);
 			})
 			.finally(() => setLoading(false));
@@ -52,21 +53,13 @@ const ListShows = () => {
 	const showNoResults = () => {
 		if (!results.length && latestSearchValue.length > 3)
 			return (
-				<>
-					<Typography variant="subtitle2">
-						Sorry, can't find any shows...
-					</Typography>
-				</>
+				<Typography variant="subtitle2">
+					Sorry, can't find any shows...
+				</Typography>
 			);
 	};
 
-	const showError = () => {
-		return (
-			<>
-				<Typography variant="subtitle2">Error...</Typography>
-			</>
-		);
-	};
+	const showError = () => <Typography variant="subtitle2">Error...</Typography>;
 
 	useEffect(() => {
 		if (localStorageResults) {
